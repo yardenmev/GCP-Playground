@@ -17,7 +17,7 @@ terraform {
   }
 }
 
-data "google_client_config" "default" {}
+data "google_client_config" "default" { }
 
 provider "kubernetes" {
   host                   = "https://${module.gke.endpoint}"
