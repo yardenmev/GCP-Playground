@@ -1,13 +1,13 @@
 provider "google"{
-    project = "gcp-devops-training-389818"
-    region  = "us-central1"
-    credentials = file("key.json")
+    project = var.project_id
+    region  = var.region
+    credentials = file(var.credentials)
 }
 
 terraform {
   backend "gcs" {
-    bucket = "infa-deploy-yarden-staging"
-    prefix = "terraform"
+    bucket = "gcp-playground-yarden"
+    prefix  = "terraform/state"
   }
   required_providers {
     google = {

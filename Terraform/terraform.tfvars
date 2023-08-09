@@ -1,0 +1,10 @@
+credentials = "terraform_gcp_key.json"
+project_id = "gcp-devops-training-389818"
+region = "us-central1"
+cluster_name = "playground"
+zones = ["us-central1-a", "us-central1-b", "us-central1-f"]
+vpc_network = "default"
+subnetwork = "default"
+playground = "name"
+node_pool_name = "mypool"
+service_account = "terraform-sa@gcp-devops-training-389818.iam.gserviceaccount.com"
