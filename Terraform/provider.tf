@@ -7,7 +7,7 @@ provider "google"{
 terraform {
   backend "gcs" {
     bucket = "infa-deploy-yarden-staging"
-    prefix = "terraform/state"
+    prefix = "terraform"
   }
   required_providers {
     google = {
