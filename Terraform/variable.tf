@@ -37,3 +37,7 @@ variable "service_account" {
 variable "cluster_name" {
     type = string
 }
+
+variable "node_pool_machine_type" {
+    type = string
+}

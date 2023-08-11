@@ -6,5 +6,6 @@ zones = ["us-central1-a", "us-central1-b", "us-central1-f"]
 vpc_network = "default"
 subnetwork = "default"
 playground = "name"
-node_pool_name = "mypool"
+node_pool_name = "default-node-pool"
 service_account = "terraform-sa@gcp-devops-training-389818.iam.gserviceaccount.com"
+node_pool_machine_type = "n1-standard-1"
