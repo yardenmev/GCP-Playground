@@ -3,11 +3,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh"
+                sh"""
                 cd /var/lib/jenkins/workspace/webapp
                 docker build .
                 docker run webapp -p 80:80
-                 "
+                """
             }
         }
     }
