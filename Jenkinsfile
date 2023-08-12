@@ -5,8 +5,8 @@ pipeline {
             steps {
                 sh"""
                 cd /var/lib/jenkins/workspace/webapp
-                docker build .
-                docker run webapp -p 80:80
+                docker build . -t webapp
+                docker run  --rm -p 80:80 webapp
                 """
             }
         }
