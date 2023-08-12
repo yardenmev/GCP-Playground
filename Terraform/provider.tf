@@ -24,3 +24,8 @@ provider "kubernetes" {
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(module.gke.ca_certificate)
 }
+
+resource "google_container_registry" "playground" {
+  project  = var.project_id
+  location = "US"
+}
