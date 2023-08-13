@@ -6,8 +6,8 @@ pipeline {
                 script{
                 sh """ 
                 cd /var/lib/jenkins/workspace/webapp
-                docker build . -t webapp
-                docker run  --rm -p 80:80 webapp
+                sudo docker build . -t webapp
+                sudo docker run  --rm -p 80:80 webapp
                 """
                 }
             }
