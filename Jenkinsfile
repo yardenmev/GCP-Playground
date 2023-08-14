@@ -29,7 +29,7 @@ pipeline {
 
      post {
         always {
-            // Bring containers down
+            // Bring containers down.
             sh 'docker stop $(docker ps -q)'
         }
     }
