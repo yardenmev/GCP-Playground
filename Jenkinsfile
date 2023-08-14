@@ -31,10 +31,13 @@ pipeline {
 
         stage('push image') {
                 steps {
-                    sh """
+                    withCredentials([file(credentialsId: 'gcloud', variable: 'GCLOUD')]) {
+                    gcloud auth activate-service-account jenkins-artifact@gcp-devops-training-389818.iam.gserviceaccount.com --key-file="$GCLOUD"
                     docker tag webapp us-central1-docker.pkg.dev/gcp-devops-training-389818/nginx-playground/webapp:${tag}
                     docker push us-central1-docker.pkg.dev/gcp-devops-training-389818/nginx-playground/webapp:${tag}
-                    """
+                    
+                    }
+                    
                 } 
             }
     }
