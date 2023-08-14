@@ -25,7 +25,14 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(module.gke.ca_certificate)
 }
 
-resource "google_container_registry" "playground" {
-  project  = var.project_id
-  location = "US"
+provider "google" {
+    project = "PROJECT-ID"
+}
+
+resource "google_artifact_registry_repository" "my-repo" {
+  location = "us-central1"
+  repository_id = "playground"
+  description = nginx-palyground-repo"
+  format = "docker"
+  kms_key_name = "KEY"
 }
