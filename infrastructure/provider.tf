@@ -30,9 +30,8 @@ provider "google" {
 }
 
 resource "google_artifact_registry_repository" "my-repo" {
-  location = "us-central1"
+  location = var.region
   repository_id = "playground"
   description = nginx-palyground-repo"
   format = "docker"
-  kms_key_name = "KEY"
 }
