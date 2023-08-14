@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment { 
-            tag = ${BUILD_NUMBER}
+            tag = "${BUILD_NUMBER}"
         }
     stages {
         stage('build') {
