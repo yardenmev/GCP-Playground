@@ -1,5 +1,8 @@
 pipeline {
     agent any
+        environment { 
+            tag = ${BUILD_NUMBER}
+        }
     stages {
         stage('build') {
             steps {
@@ -29,10 +32,8 @@ pipeline {
         stage('push image') {
                 steps {
                     sh """
-                    aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 644435390668.dkr.ecr.us-east-2.amazonaws.com
-                    docker build -t ${IMAGE_NAME}:${tag} .
-                    docker tag ${IMAGE_NAME}:${tag} 644435390668.dkr.ecr.us-east-2.amazonaws.com/yarden-todo:${tag}
-                    docker push 644435390668.dkr.ecr.us-east-2.amazonaws.com/yarden-todo:${tag}
+                    docker tag webapp us-central1-docker.pkg.dev/gcp-devops-training-389818/nginx-playground/webapp:${tag}
+                    docker push us-central1-docker.pkg.dev/gcp-devops-training-389818/nginx-playground/webapp:${tag}
                     """
                 } 
             }
