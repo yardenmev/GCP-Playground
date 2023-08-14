@@ -16,7 +16,7 @@ pipeline {
         stage('test ') {
             steps {
                 script{
-                def curl = sh script: 'curl -IsSf localhost:80
+                def curl = sh script: 'curl -IsSf localhost:80'
                 if (curl.contains("HTTP/1.1 200 OK")) {
                     echo "webpage alive"
                     } else {
