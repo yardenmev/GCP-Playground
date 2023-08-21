@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: us-central1-docker.pkg.dev/gcp-devops-training-389818/nginx-playground/webapp:40
+          image: us-central1-docker.pkg.dev/gcp-devops-training-389818/nginx-playground/webapp:41
           env:
             - name: MY_POD_NAME
               valueFrom:
